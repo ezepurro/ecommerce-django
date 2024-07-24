@@ -85,11 +85,18 @@ body{
 }
 
 .footer-per{
-    /* position: fixed; */
+    /* position: fixed; 
     width: 100%;
-    bottom: 0;
-    height: 100px;
-}
+    bottom: 0; */
+
+    p{
+        color: white;
+    }
+
+    ul{
+        margin: none;
+    }
+} 
 
 #store{
     padding: 58px 0px 0px 0px;
