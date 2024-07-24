@@ -1,0 +1,45 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    <!-- Content -->
+     <section id="auth">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center title-cont">
+                    <h3 class="title">Sign In</h3>
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-12 col-lg-12">
+                    <form action="" class="form-control">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12 col-md-12 col-lg-12">
+                                    <input type="text" class="form-control" placeholder="Username" required>
+                                    <input type="email" class="form-control" placeholder="Email" required>
+                                    <input type="password" class="form-control" placeholder="Password" required>                                    
+                                </div>
+                            </div>
+                            <h5>Contact Information</h5>
+                            <div class="row">
+                                <div class="col-12 col-md-6 col-lg-6">
+                                    <input type="text" class="form-control" placeholder="Name" required>
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-6">
+                                    <input type="text" class="form-control" placeholder="Last name">
+                                </div>
+                                <div class="col-12">
+                                    <input type="text" class="form-control" placeholder="Phone number">
+                                </div>
+                            </div>
+                        </div>
+                        <input type="submit" class="form-control btn btn-primary" value="Sign In">
+                    </form>
+                </div>
+            </div>
+        </div>
+     </section>
+{% endblock %}

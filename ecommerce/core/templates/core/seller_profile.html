@@ -1,0 +1,55 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+{% load static %}
+    <!-- Content -->
+     <section id="profile">
+        <div class="container">
+             <div class="row profile">
+                <div class="col-12 col-md-2 col-lg-2  text-center img">
+                    <img src="{% static 'core/img/ej.jpeg' %}" alt="" class="rounded-circle">
+                    <h4>@username</h4>
+                    <a href="#"><h6>Platinum seller</h6></a>
+                </div>
+                <div class="col-12 col-md-10 col-lg-10 ">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 col-md-6 col-lg-6 text-center contact">
+                                <h5>Contact</h5>
+                                <ul>
+                                    <li><h6>example@mail.com</h6></li>
+                                    <li><h6>+54 9 351 531-2196</h6></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <hr>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h3 class="title">{User}'s Store</h3>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-3 card-per">
+                    <div class="card bg-light shadow-sm border-0 px-2 py-3 mb-4">
+                        <div class="text-center">
+                            <img src="{% static 'core/img/ej.jpeg' %}" alt="">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title product-title">Product title</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing eli</p>
+                            <p class="price"><b>$ 999</b></p>
+                            <a href="#" class="btn btn-primary form-control">Buy</a>
+                        </div>
+                    </div>
+                </div>      
+            </div>
+        </div>
+     </section>
+{% endblock %}

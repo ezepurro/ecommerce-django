@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif; 
+}
+
+body{
+    background-color: black;
+}
+
+.navbar a{
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.services{
+    padding: 80px 0;
+}
+
+
+
+.box-icons{
+    i{
+        font-size: 40px;
+    }
+
+    h3{
+        font-size: 20px;
+        font-weight: 800;
+    }
+}
+
+
+
+
+
+.product{
+    padding: 80px 0;
+
+    img{
+        width: 150px;
+        height: 150px;
+    }
+}
+
+
+
+.banner{
+    padding: 50px 0;
+    margin-bottom: 80px;
+    margin-top: 60px;
+    background-color: #EAE5DF;
+
+    h2{
+        font-size: 40px;
+        text-transform: uppercase;
+        font-weight: 800;
+    }
+
+    img{
+        width: 300px;
+    }
+}
+
+
+
+
+
+@media(max-width: 767px){
+    .services{
+        padding: 30px 0;
+    }
+
+    .product{
+        padding: 30px 0 0 0;
+    }    
+
+    .banner{
+        margin-bottom: 30px;
+    }
+
+    #store{
+
+    }
+}
+
+.footer-per{
+    /* position: fixed; */
+    width: 100%;
+    bottom: 0;
+    height: 100px;
+}
+
+#store{
+    padding: 58px 0px 0px 0px;
+    
+
+    .profile{
+        background-color: aqua;
+
+        img{
+            width: 150px;
+            height: 150px;
+        }
+    }
+
+
+    img{
+        width: 150px;
+        height: 150px;
+    }
+
+    .card-body{
+        .btn{
+            background-color: rgb(39, 143, 56);
+            border: none;
+        }
+        .btn:hover{
+            background-color: rgb(32, 114, 46);
+        }
+
+
+    }
+
+}
+
+#profile{
+    padding: 58px 0px 0px 0px;
+    
+
+    .profile{
+
+        margin-top: 30px;
+
+        img{
+            width: 150px;
+            height: 150px;
+        }
+
+        .img{
+            a{
+                text-decoration: none;
+            }
+        }
+
+        .contact{
+            margin: 20px;
+
+            h5{
+                text-align: left;
+            }
+            
+            ul{
+                list-style: none;
+            }
+            h6{
+                text-align: left;
+            }
+        }
+    }
+
+
+    img{
+        width: 150px;
+        height: 150px;
+    }
+
+
+
+}
+
+#auth{
+    .title-cont{
+        margin-top: 70px;
+    }
+
+    .form-control{
+        padding: 20px;
+        margin: 20px 0px 30px 0px;
+
+        input{
+            margin-top: 20px;
+        }
+    }
+
+    h5{
+        text-align: center;
+    }
+
+}
+
+#product-detail{
+    padding: 58px 0px 0px 0px;
+    
+
+    .profile{
+        img{
+            width: 150px;
+            height: 150px;
+        }
+
+        .img{
+            a{
+                text-decoration: none;
+            }
+        }
+
+        .user-redirect{
+            color: black;
+        }
+
+        .contact{
+            margin: 20px;
+
+            h5{
+                text-align: left;
+            }
+            
+            ul{
+                list-style: none;
+            }
+            h6{
+                text-align: left;
+            }
+
+            .card-body{
+                height: auto;
+            }
+        }
+    }
+
+    .product{
+        .product-img img{
+            height: auto;
+            width: 100%;
+        }
+    }
+
+
+    img{
+        width: 150px;
+        height: 150px;
+    }
+}
+
+.title{
+    margin: 20px;
+    font-weight: 600;
+}
+
+
