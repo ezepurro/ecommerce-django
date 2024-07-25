@@ -40,9 +40,9 @@
                             <a href="{% url 'store' %}" class="nav-link">Store</a>
                         </li>
                         {% if user.is_authenticated %}
-                            <li class="nav-item">
+                            {% comment %} <li class="nav-item">
                                 <a href="{% url 'seller_profile' %}" class="nav-link">Seller Profile</a>
-                            </li>
+                            </li> {% endcomment %}
                             <li class="nav-item">
                                 <form id="logout-form" method="post" action="{% url 'admin:logout' %}">
                                     {% csrf_token %}
@@ -51,7 +51,7 @@
                             </li>
                         {% else %}
                             <li class="nav-item">
-                                <a href="{% url 'sign_in' %}" class="nav-link">Sign In</a>
+                                <a href="{% url 'signup' %}" class="nav-link">Sign Up</a>
                             </li>
                             <li class="nav-item">
                                 <a href="{% url 'login' %}" class="nav-link">Log In</a>

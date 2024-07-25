@@ -1,0 +1,61 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    <style>
+    label{
+            display: none;
+        }
+    </style>
+    <!-- Content -->
+     <section id="auth">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center title-cont">
+                    <h3 class="title">Sign Up</h3>
+                    <hr>
+                </div>
+            </div>
+        </div>
+        {% comment %} <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-12 col-lg-12">
+                    <form action="" class="form-control" method="post">
+                        {% csrf_token %}
+                        {{form.as_p}}
+                        <input type="submit" class="form-control btn btn-primary" value="Sign Up">
+                    </form>
+                </div>
+            </div>
+        </div> {% endcomment %}
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-12 col-lg-12">
+                    <form action="" class="form-control" method="post">
+                        {% csrf_token %}
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12 col-md-12 col-lg-12">
+                                    {{form.username}}
+                                    {{form.email}}
+                                    {{form.password1}}     
+                                    {{form.password2}}                                 
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-md-6 col-lg-6">
+                                    {{form.first_name}}
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-6">
+                                    {{form.last_name}}
+                                </div>
+                            </div>
+                        </div>
+                        <input type="submit" class="form-control btn btn-primary" value="Sign Up">
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+
+     </section>
+{% endblock %}

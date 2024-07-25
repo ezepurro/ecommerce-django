@@ -8,6 +8,9 @@
                 <div class="col-12 text-center title-cont">
                     <h3 class="title">Log In</h3>
                     <hr>
+                    {% if 'register' in request.GET %}
+                        <p style="color:green">User registered successfully, now you may log in :)</p>
+                    {% endif %}
                 </div>
             </div>
         </div>

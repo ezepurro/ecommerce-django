@@ -7,10 +7,4 @@ def home(request):
 
 
 
-def seller_profile(request):
-    return render(request, "core/seller_profile.html")
-
-
-def sign_in(request):
-    return render(request, "core/sign_in.html")
 
