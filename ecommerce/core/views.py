@@ -14,6 +14,3 @@ def seller_profile(request):
 def sign_in(request):
     return render(request, "core/sign_in.html")
 
-
-def log_in(request):
-    return render(request, "core/log_in.html")

@@ -14,9 +14,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-12 col-lg-12">
-                    <form action="" class="form-control">
-                        <input type="text" class="form-control" placeholder="Username">
-                        <input type="password" class="form-control" placeholder="Password">
+                    <form action="" class="form-control" method="post">
+                        {% csrf_token %}
+                        <input type="text" class="form-control" placeholder="Username" name="username" required>
+                        <input type="password" class="form-control" placeholder="Password" name="password" required>
                         <input type="submit" class="form-control btn btn-primary" value="Log In">
                     </form>
                 </div>

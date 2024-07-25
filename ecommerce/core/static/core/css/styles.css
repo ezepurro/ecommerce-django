@@ -31,7 +31,19 @@ body{
 }
 
 
-
+header{
+    .navbar{
+        button{
+            border: none;
+            background: none;
+            font-weight: 600;
+            font-size: 18px;
+            color: rgba(255, 255, 255, .55);
+            padding: 8px;
+            margin: 0;
+        }
+    }
+}
 
 
 .product{

@@ -28,7 +28,7 @@
                 <hr>
                <div class="col-12 col-md-2 col-lg-2  text-center img">
                    <img src="{% static 'core/img/ej.jpeg' %}" alt="" class="rounded-circle">
-                   <a href="#" class="user-redirect"><h4>@username</h4></a>
+                   <a href="#" class="user-redirect"><h4>@{{product.seller}}</h4></a>
                    <a href="#"><h6>Platinum seller</h6></a>
                </div>
                <div class="col-12 col-md-10 col-lg-10 ">
@@ -37,8 +37,8 @@
                            <div class="col-12 col-md-6 col-lg-6 text-center contact">
                                <h5>Contact</h5>
                                <ul>
-                                   <li><h6>example@mail.com</h6></li>
-                                   <li><h6>+54 9 351 531-2196</h6></li>
+                                   <li><h6>{{product.seller.email}}</h6></li>
+                                   <li><h6>{+54 9 351 531-2196}</h6></li>
                                </ul>
                            </div>
                        </div>
