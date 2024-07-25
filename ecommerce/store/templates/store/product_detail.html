@@ -35,7 +35,7 @@
                    <div class="container">
                        <div class="row">
                            <div class="col-12 col-md-6 col-lg-6 text-center contact">
-                               <h5>Contact</h5>
+                               <h5><a href="{% url 'seller_profile' product.seller.id product.seller.user|slugify %}">{{product.seller.user.first_name}} {{product.seller.user.last_name}}</a></h5>
                                <ul>
                                    <li><h6>{{product.seller.user.email}}</h6></li>
                                    <li><h6>{{product.seller.direction}}</h6></li>

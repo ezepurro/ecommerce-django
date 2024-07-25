@@ -1,7 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm
 from .forms import SignUpForm
 from .models import Seller
-from django.forms import BaseModelForm
+from store.models import Product
 from django.views.generic import CreateView, DetailView
 from django.urls import reverse_lazy
 from django import forms
@@ -48,3 +48,13 @@ class SignUpView(CreateView):
 class SellerProfile(DetailView):
     model = Seller
     template_name = 'registration/seller_profile.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(SellerProfile, self).get_context_data(**kwargs)
+        context.update({
+            'product_list': Product.objects.order_by('title'),            
+        })
+        return context
+    
+    def get_queryset(self):
+        return Seller.objects.order_by('user')    
