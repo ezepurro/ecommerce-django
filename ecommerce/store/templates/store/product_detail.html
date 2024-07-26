@@ -6,12 +6,11 @@
      <section id="product-detail">
         <div class="container">
             <div class="row product">
-
                 <div class="col-12 col-md-6 col-lg-6 product-img">
                     <img src="{{product.image.url}}" alt="product">
                 </div>
                 <div class="col-12 col-md-6 col-lg-6 card-per">
-                    <div class="card   border-0 px-2 py-3 mb-4">
+                    <div class="card border-0 px-2 py-3 mb-4">
                         <h3 class="title card-title">{{product.title}}</h3>
                         <div class="card-body">
                             <p>{{product.description}}</p>
@@ -28,14 +27,14 @@
                 <hr>
                <div class="col-12 col-md-2 col-lg-2  text-center img">
                    <img src="{{product.seller.avatar.url}}" alt="" class="rounded-circle">
-                   <a href="{% url 'seller_profile' product.seller.id product.seller.user|slugify %}" class="user-redirect"><h4>@{{product.seller.user}}</h4></a>
+                   <a href="{% url 'seller_profile' product.seller.id product.seller.user %}" class="user-redirect"><h4>@{{product.seller.user}}</h4></a>
                    <a href="#"><h6>Platinum seller</h6></a>
                </div>
                <div class="col-12 col-md-10 col-lg-10 ">
                    <div class="container">
                        <div class="row">
                            <div class="col-12 col-md-6 col-lg-6 text-center contact">
-                               <h5><a href="{% url 'seller_profile' product.seller.id product.seller.user|slugify %}">{{product.seller.user.first_name}} {{product.seller.user.last_name}}</a></h5>
+                               <h5><a href="{% url 'seller_profile' product.seller.id product.seller.user %}">{{product.seller.user.first_name}} {{product.seller.user.last_name}}</a></h5>
                                <ul>
                                    <li><h6>{{product.seller.user.email}}</h6></li>
                                    <li><h6>{{product.seller.direction}}</h6></li>

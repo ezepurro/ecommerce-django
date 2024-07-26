@@ -11,7 +11,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center title-cont">
-                    <h3 class="title">Sign Up</h3>
+                    <h3 class="title">Sell</h3>
                     <hr>
                 </div>
             </div>
@@ -24,22 +24,23 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-12 col-md-12 col-lg-12">
-                                    {{form.username}}
-                                    {{form.email}}
-                                    {{form.password1}}     
-                                    {{form.password2}}                                 
+                                    {{form.title}}
+                                    {{form.description}}                              
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-12 col-md-6 col-lg-6">
-                                    {{form.first_name}}
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    {{form.price}}
                                 </div>
-                                <div class="col-12 col-md-6 col-lg-6">
-                                    {{form.last_name}}
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    {{form.state}}
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    {{form.image}}
                                 </div>
                             </div>
                         </div>
-                        <input type="submit" class="form-control btn btn-primary" value="Sign Up">
+                        <input type="submit" class="form-control btn btn-primary" value="Publish">
                     </form>
                 </div>
             </div>
