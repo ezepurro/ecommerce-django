@@ -7,7 +7,11 @@
         <div class="container">
              <div class="row profile">
                 <div class="col-12 col-md-2 col-lg-2  text-center img">
-                    <img src="{{seller.avatar.url}}" alt="" class="rounded-circle">
+                    {% if seller.avatar %}
+                        <img src="{{seller.avatar.url}}" alt="" class="rounded-circle">
+                    {% else %}
+                        <img src="{% static 'core/img/no-avatar.jpg' %}" alt="" class="rounded-circle">
+                    {% endif %}
                     <h4>@{{seller.user}}</h4>
                     <a href="#"><h6>{Platinum seller}</h6></a>
                 </div>
@@ -18,7 +22,12 @@
                                 <h5>{{seller.user.first_name}} {{seller.user.last_name}}</h5>
                                 <ul>
                                     <li><h6>{{seller.user.email}}</h6></li>
-                                    <li><h6>{{seller.phone_number}}</h6></li>
+                                    {% if seller.phone_number %}
+                                        <li><h6>{{seller.phone_number}}</h6></li>
+                                    {% endif %}
+                                    {% if seller.direction %}
+                                        <li><h6>{{seller.direction}}</h6></li>
+                                    {% endif %}
                                 </ul>
                             </div>
                         </div>

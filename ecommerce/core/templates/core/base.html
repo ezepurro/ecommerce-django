@@ -41,9 +41,13 @@
                             <a href="{% url 'store' %}" class="nav-link">Store</a>
                         </li>
                         {% if user.is_authenticated %}
-                            <li class="nav-item">
-                                <a href="{% url 'seller_profile' user.seller.id user %}" class="nav-link">Seller Profile</a>
-                            </li> 
+                                <li class="nav-item">
+                                {% if user.seller %}
+                                    <a href="{% url 'seller_profile' user.seller.id user %}" class="nav-link">Seller Profile</a>
+                                {% else %}
+                                    <a href="{% url 'seller_create' user.id user %}" class="nav-link">Create seller profile</a>
+                                {% endif %}
+                                </li> 
                             <li class="nav-item">
                                 <form id="logout-form" method="post" action="{% url 'admin:logout' %}">
                                     {% csrf_token %}

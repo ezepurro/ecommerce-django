@@ -1,11 +1,6 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
-    <style>
-    label{
-            display: none;
-        }
-    </style>
     <!-- Content -->
      <section id="auth">
         <div class="container">
@@ -19,7 +14,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-12 col-lg-12">
-                    <form action="" class="form-control" method="post">
+                    <form  class="form-control" method="post" enctype="multipart/form-data">
                         {% csrf_token %}
                         <div class="container">
                             <div class="row">
@@ -41,11 +36,27 @@
                             </div>
                         </div>
                         <input type="submit" class="form-control btn btn-primary" value="Publish">
+                        <ul class="errorlist">
+                            {% if form.non_field_errors %}
+                                <li>{{ form.non_field_errors }}</li>
+                            {% endif %}
+                            {% for field in form %}
+                                {% if field.errors %}
+                                <li>
+                                    {{ field.label }}
+                                    <ul class="errorlist">
+                                    {% for error in field.errors %}
+                                        <li>{{ error }}</li>
+                                    {% endfor %}
+                                    </ul>
+                                </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
                     </form>
                 </div>
             </div>
         </div>
-        
 
      </section>
 {% endblock %}

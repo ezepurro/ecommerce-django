@@ -3,6 +3,7 @@ from .forms import SignUpForm
 from .models import Seller
 from store.models import Product
 from django.views.generic import CreateView, DetailView
+from django.contrib.auth.models import User
 from django.urls import reverse_lazy
 from django import forms
 
@@ -58,3 +59,17 @@ class SellerProfile(DetailView):
     
     def get_queryset(self):
         return Seller.objects.order_by('user')    
+    
+
+
+class SellerCreateView(CreateView):
+    model = Seller
+    template_name = 'registration/create_seller_profile.html'
+    fields = ['phone_number', 'direction', 'avatar']
+    success_url = reverse_lazy('store')
+
+    def form_valid(self, form):
+        instance = form.save(commit=False)
+        instance.user= User.objects.get(pk=self.kwargs['pk'])
+        form.save()
+        return super(SellerCreateView, self).form_valid(form)

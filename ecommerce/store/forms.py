@@ -2,31 +2,40 @@ from django import forms
 from .models import Product, STATUS_CHOICES
 from django.contrib.auth.models import User
 
+
 class ProductForm(forms.ModelForm):
 
     class Meta:
         model = Product
         fields = ['title', 'description', 'price', 'state', 'image']
-        state = forms.ChoiceField(choices=STATUS_CHOICES)
         widgets = {
             'title': forms.TextInput(attrs={
                 'class':'form-control',
-                'placeholder':'Title'}
+                'placeholder':'Title',
+                'name':'title',
+                'required':True}
             ),
             'description': forms.Textarea(attrs={
                 'class':'form-control',
                 'placeholder':'Description',
                 'id':'exampleFormControlTextarea1',
-                'rows':3}
+                'rows':3,
+                'name':'description',
+                'required':True}
             ),
             'image': forms.ClearableFileInput(attrs={
-                'class':'form-control-file',}
+                'class':'form-control',
+                'name':'image'}
             ),
             'price': forms.NumberInput(attrs={
                 'class':'form-control',
-                'placeholder':'Price'}
+                'placeholder':'Price',
+                'name':'price',
+                'required':True}
             ),
             'state': forms.Select(attrs={
-                'class':'form-control'
+                'class':'form-control',
+                'name':'state',
+                'required':True
             }),
         }

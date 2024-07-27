@@ -16,15 +16,15 @@ class Product(models.Model):
     title = models.CharField(max_length=200, verbose_name="Title")
     description = models.TextField(verbose_name="Description")
     price = models.CharField(max_length=6, verbose_name="Price")
-    image = models.ImageField(verbose_name="Image", upload_to="store")
+    image = models.ImageField(verbose_name="Image", upload_to="store", null=True, blank=True)
     seller = models.ForeignKey(Seller, verbose_name="Seller", on_delete=models.CASCADE, related_name='%(class)s_seller', null=True, blank=True)
     state = models.CharField(max_length=20, choices=STATUS_CHOICES, default='Used')
-    published = models.DateTimeField(auto_now_add=True, verbose_name="Publish date")
+    published = models.DateTimeField(auto_now_add=True, verbose_name="Publish date", null=True, blank=True)
 
     class Meta:
-             verbose_name = "Product"
-             verbose_name_plural = "Products"
-             ordering = ['-published']
+        verbose_name = "Product"
+        verbose_name_plural = "Products"
+        ordering = ['-published']
 
     def __str__(self):
-             return self.title
+        return self.title

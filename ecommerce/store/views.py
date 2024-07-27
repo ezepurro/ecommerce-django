@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic.list import ListView
-from django.views.generic import CreateView, DetailView
+from django.views.generic.detail import DetailView
+from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
 from django.contrib.auth.models import User
 from .models import Product
@@ -27,14 +28,15 @@ class ProductDetailView(DetailView):
 
 
 
+
 class ProductCreateView(CreateView):
     model = Product
-    template_name = 'store/product_form.html'
-    form_class = ProductForm
-    success_url = reverse_lazy('store')
+    success_url = reverse_lazy("store")
+    form_class = ProductForm    
+
 
     def form_valid(self, form):
         instance = form.save(commit=False)
-        instance.seller = User.objects.get(pk=self.kwargs['pk'])
+        instance.seller = User.objects.get(pk=self.kwargs['pk']).seller
         form.save()
         return super(ProductCreateView, self).form_valid(form)

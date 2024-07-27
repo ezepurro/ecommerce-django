@@ -26,7 +26,11 @@
             <div class="row profile">
                 <hr>
                <div class="col-12 col-md-2 col-lg-2  text-center img">
-                   <img src="{{product.seller.avatar.url}}" alt="" class="rounded-circle">
+                    {% if product.seller.avatar %}
+                        <img src="{{product.seller.avatar.url}}" alt="" class="rounded-circle">
+                    {% else %}
+                        <img src="{% static 'core/img/no-avatar.jpg' %}" alt="" class="rounded-circle">
+                    {% endif %}
                    <a href="{% url 'seller_profile' product.seller.id product.seller.user %}" class="user-redirect"><h4>@{{product.seller.user}}</h4></a>
                    <a href="#"><h6>Platinum seller</h6></a>
                </div>
@@ -37,7 +41,12 @@
                                <h5><a href="{% url 'seller_profile' product.seller.id product.seller.user %}">{{product.seller.user.first_name}} {{product.seller.user.last_name}}</a></h5>
                                <ul>
                                    <li><h6>{{product.seller.user.email}}</h6></li>
-                                   <li><h6>{{product.seller.direction}}</h6></li>
+                                    {% if product.seller.direction %}
+                                        <li><h6>{{product.seller.direction}}</h6></li>
+                                    {% endif %}
+                                    {% if product.seller.phone_number %}
+                                        <li><h6>{{product.seller.phone_number}}</h6></li>
+                                    {% endif %}
                                </ul>
                            </div>
                        </div>
