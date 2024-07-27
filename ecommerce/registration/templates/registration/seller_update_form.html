@@ -1,0 +1,30 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    <!-- Content -->
+     <section id="auth">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center title-cont">
+                    <h3 class="title">Edit Seller Profile</h3>
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-12 col-lg-12">
+                    <form action="" class="form-control" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{form.phone_number}}
+                        {{form.direction}}
+                        {{form.avatar}}
+                        <input type="submit" class="form-control btn btn-primary" value="Update Profile">
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+
+     </section>
+{% endblock %}

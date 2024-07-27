@@ -1,11 +1,12 @@
 from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.urls import reverse_lazy
 from django.contrib.auth.models import User
 from .models import Product
 from .forms import ProductForm
+from registration.models import Seller
 
 
 # Create your views here.
@@ -14,11 +15,6 @@ class ProductListView(ListView):
     model = Product
     paginate_by = 24
     template_name = 'store/store.html'
-
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     context["now"] = timezone.now()
-    #     return context
 
 
 
@@ -40,3 +36,11 @@ class ProductCreateView(CreateView):
         instance.seller = User.objects.get(pk=self.kwargs['pk']).seller
         form.save()
         return super(ProductCreateView, self).form_valid(form)
+    
+
+
+class ProductUpdateView(UpdateView):
+    model = Product
+    form_class = ProductForm    
+    template_name_suffix = "_update_form"
+    success_url = reverse_lazy("store")

@@ -18,7 +18,7 @@
                 <div class="col-12 col-md-10 col-lg-10 ">
                     <div class="container">
                         <div class="row">
-                            <div class="col-12 col-md-6 col-lg-6 text-center contact">
+                            <div class="col-12 col-md-6 col-lg-6  contact">
                                 <h5>{{seller.user.first_name}} {{seller.user.last_name}}</h5>
                                 <ul>
                                     <li><h6>{{seller.user.email}}</h6></li>
@@ -29,6 +29,12 @@
                                         <li><h6>{{seller.direction}}</h6></li>
                                     {% endif %}
                                 </ul>
+                                
+                            </div>
+                            <div class="col-12 col-md-4 col-lg-4 text-center">
+                                {% if user == seller.user %}
+                                    <a href="{% url 'seller_update' seller.id seller.user %}">Edit information</a>
+                                {% endif %}
                             </div>
                         </div>
                     </div>

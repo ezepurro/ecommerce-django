@@ -1,8 +1,9 @@
 from django.contrib.auth.forms import UserCreationForm
-from .forms import SignUpForm
+from .forms import SignUpForm, SellerForm
 from .models import Seller
 from store.models import Product
 from django.views.generic import CreateView, DetailView
+from django.views.generic.edit import UpdateView
 from django.contrib.auth.models import User
 from django.urls import reverse_lazy
 from django import forms
@@ -73,3 +74,14 @@ class SellerCreateView(CreateView):
         instance.user= User.objects.get(pk=self.kwargs['pk'])
         form.save()
         return super(SellerCreateView, self).form_valid(form)
+    
+
+
+class SellerUpdateView(UpdateView):
+    model = Seller
+    template_name_suffix = "_update_form"
+    form_class = SellerForm
+
+
+    def get_success_url(self):
+        return reverse_lazy('home')  + '?updated'

@@ -13,6 +13,13 @@
                     </p>
                 </div>
             </div>
+            {% if 'updated' in request.GET %}
+                <div class="row" style="background-color: rgb(51, 255, 0);">
+                    <div class="col-md-12 text-center updated">
+                        <p><a href="{% url 'seller_profile' user.seller.id user %}">Seller profile updated</a></p>
+                    </div>
+                </div>    
+            {% endif %}
         </div>
     </section>
 

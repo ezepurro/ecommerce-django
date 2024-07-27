@@ -23,7 +23,7 @@ class ProductForm(forms.ModelForm):
                 'name':'description',
                 'required':True}
             ),
-            'image': forms.ClearableFileInput(attrs={
+            'image': forms.FileInput(attrs={
                 'class':'form-control',
                 'name':'image'}
             ),
@@ -31,7 +31,9 @@ class ProductForm(forms.ModelForm):
                 'class':'form-control',
                 'placeholder':'Price',
                 'name':'price',
-                'required':True}
+                'required':True,
+                'step':'.01',
+                'min':'0',}
             ),
             'state': forms.Select(attrs={
                 'class':'form-control',
