@@ -5,6 +5,8 @@ from store.models import Product
 from django.views.generic import CreateView, DetailView
 from django.views.generic.edit import UpdateView
 from django.contrib.auth.models import User
+from django.contrib.auth import logout
+from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django import forms
 
@@ -85,3 +87,9 @@ class SellerUpdateView(UpdateView):
 
     def get_success_url(self):
         return reverse_lazy('home')  + '?updated'
+    
+
+
+def LogOut(request):
+    logout(request)
+    return redirect('home')
