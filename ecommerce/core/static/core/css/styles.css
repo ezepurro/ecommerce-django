@@ -250,6 +250,14 @@ header {
         .errorlist li{
             color: white;
         }
+
+        .update{
+            border: solid 2px rgb(189, 186, 2);
+        }
+
+        .update:hover{
+            background-color: rgb(189, 186, 2);;
+        }
     }
 
     .form-control-file {
@@ -312,13 +320,31 @@ header {
 
     .product {
 
-        .btn {
+        .buy {
             background-color: rgba(0, 0, 0, 0);
             border: solid 2px rgb(39, 143, 56);
         }
 
-        .btn:hover {
+        .buy:hover {
             background-color: rgb(39, 143, 56);
+        }
+
+        .update {
+            background-color: rgba(0, 0, 0, 0);
+            border: solid 2px rgb(189, 186, 2);
+        }
+
+        .update:hover {
+            background-color: rgb(189, 186, 2);
+        }
+
+        .delete {
+            background-color: rgba(0, 0, 0, 0);
+            border: solid 2px rgb(168, 7, 7);
+        }
+
+        .delete:hover {
+            background-color: rgb(168, 7, 7);
         }
 
         .product-img img {
@@ -328,6 +354,12 @@ header {
 
         .card-per .card {
             background-color: #111111;
+        }
+
+        .delete-warning{
+            text-align: center;
+            color: red;
+            font-weight: 600;
         }
     }
 

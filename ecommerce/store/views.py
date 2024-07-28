@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib.auth.models import User
 from .models import Product
@@ -43,4 +43,9 @@ class ProductUpdateView(UpdateView):
     model = Product
     form_class = ProductForm    
     template_name_suffix = "_update_form"
+    success_url = reverse_lazy("store")
+
+
+class ProductDeleteView(DeleteView):
+    model = Product
     success_url = reverse_lazy("store")
